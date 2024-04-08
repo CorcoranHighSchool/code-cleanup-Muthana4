@@ -1,10 +1,11 @@
 ﻿
+  used UnityEngine 
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
     private float topBound = 30.0f;
     private float lowerBound = -10.0f;
-
+     private const string gameover = "Gameover";
     // Update is called once per frame
     void Update()
     {
@@ -17,7 +18,7 @@ public class DestroyOutOfBounds : MonoBehaviour
         if (transform.position.z < lowerBound)
         {
             //Log "Game over to the console
-            Debug.Log("GameOver");
+            Debug.Log(GameOver);
             Destroy(gameObject);
         }
     }
