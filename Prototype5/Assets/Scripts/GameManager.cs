@@ -7,13 +7,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private int score = 0;
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI gameOverText;
-    public GameObject titleScreen;
-    public Button restartButton;
-    public List<GameObject> targets;
+    [Serialize field] private TextMeshProUGUI scoreText;
+    [Serialize field] private TextMeshProUGUI gameOverText;
+    [Serialize field] private GameObject titleScreen;
+    [Serialize field] private Button restartButton;
+    [Serialize field] private List<GameObject> targets;
     private float spawnRate = 1.0f;
-    public bool isGameActive = false;
+    public bool gameOver {get; private set;}
 
     public void StartGame(int difficulty)
     {
@@ -25,11 +25,7 @@ public class GameManager : MonoBehaviour
         UpdateScore(0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    /
     private IEnumerator SpawnTarget()
     {
         while (isGameActive)
